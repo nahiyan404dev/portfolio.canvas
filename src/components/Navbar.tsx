@@ -1,67 +1,105 @@
-
-
 "use client";
+
 import { useState } from "react";
-import { ModeToggle } from "./theme-control";
-import { Button } from "./ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import { Menu, X, Download } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "./theme-control";
+import logo from "@/assets/niloy.png";
 
-
-const links = ["About", "Skills", "Experience", "Work", "Contact"];
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-bbg backdrop-blur-md"> 
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="text-lg font-bold tracking-tight">
-          
-        </a>
+    <header className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl">
+      <nav className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
 
-        <ul className="hidden items-center gap-8 text-sm text-neutral-400 md:flex">
-          {links.map((l) => (
-            <li key={l}>
-              <a href={`#${l.toLowerCase()}`} className="transition hover:text-black">
-                {l}
-              </a>
-            </li>
+        {/* Logo */}
+        <Link href="#home" className="shrink-0">
+          <Image
+            src={logo}
+            height={40}
+            width={40}
+            alt="Portfolio logo"
+            priority
+            className="rounded-full object-cover"
+          />
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-7 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              {link.name}
+            </Link>
           ))}
-        </ul>
-
-        <div className="flex justify-center gap-4">
-          <ModeToggle/>
-          <Link href='/resume-pdf'>
-          <Button variant="outline"className="text-neutral-400">
-            Résumé PDF ↓
-          </Button>
-          </Link>
         </div>
 
-        <button
-          className="text-2xl md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? "✕" : "☰"}
-        </button>
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-2">
+
+          <ModeToggle />
+          <Link href='/gopal_das.pdf'
+          download='gopal_das.pdf'
+          >
+          <Button variant="outline" className="hidden gap-2 sm:flex">
+            <Download size={16} />
+            Résumé
+          </Button>
+          </Link>
+          {/* Mobile Menu Button */}
+          <Button
+            variant="outline"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </Button>
+        </div>
       </nav>
 
-      {open && (
-        <ul className="flex flex-col gap-4 border-t border-white/10 px-6 py-4 md:hidden">
-          {links.map((l) => (
-            <li key={l}>
-              <a
-                href={`#${l.toLowerCase()}`}
-                onClick={() => setOpen(false)}
-                className="text-neutral-300"
+      {/* Mobile Navigation Dropdown */}
+      {isOpen && (
+        <div
+          id="mobile-navigation"
+          className="border-t bg-background/95 px-6 py-5 shadow-lg backdrop-blur-xl md:hidden"
+        >
+          <div className="container mx-auto flex max-w-7xl flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
-                {l}
-              </a>
-            </li>
-          ))}
-        </ul>
+                {link.name}
+              </Link>
+            ))}
+
+            <Button variant="outline" className="mt-2 w-full sm:hidden">
+              <Download size={16} />
+              Résumé
+            </Button>
+          </div>
+        </div>
       )}
     </header>
   );
