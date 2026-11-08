@@ -40,14 +40,14 @@ const Banner = () => {
             <AnimatedButton/>
 
           {/* Secondary Badge */}
-          <div className="flex flex-wrap items-center gap-3 rounded-full border-2 border-dashed border-gray-400 px-5 py-3 text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-white hover-">
-            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
+          <div className="flex flex-wrap items-center gap-3 rounded-full border-2 border-dashed border-gray-400 px-5 py-3 text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-white hover:border-black sm:w-fit">
+            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500 "/>
             <Link href='#contact'>
               <span>
               Lets build something amazing
             </span>
 
-            <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-black">
+            <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-black ">
               AVAILABLE
             </span>
             </Link>
