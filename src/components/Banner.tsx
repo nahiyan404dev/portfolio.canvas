@@ -40,19 +40,26 @@ const Banner = () => {
             <AnimatedButton/>
 
           {/* Secondary Badge */}
-          <div className="flex flex-wrap items-center gap-3 rounded-full border-2 border-dashed border-gray-400 px-5 py-3 text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-white hover:border-black sm:w-fit">
-            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500 "/>
-            <Link href='#contact'>
-              <span>
-              Lets build something amazing
-            </span>
+           <Link
+        href="#contact"
+        className="group inline-flex max-w-full flex-wrap items-center justify-center gap-2.5 rounded-full border-2 border-dashed border-gray-400 px-3 py-2.5 text-xs font-medium text-gray-700 transition-all duration-300 hover:border-black hover:bg-black hover:text-white dark:text-gray-300 dark:hover:border-white dark:hover:bg-white dark:hover:text-black sm:gap-3 sm:px-5 sm:py-3 sm:text-sm"
+      >
+        {/* Availability indicator */}
+        <span className="relative flex h-2.5 w-2.5 shrink-0">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-60" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-yellow-500" />
+        </span>
 
-            <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-black ">
-              AVAILABLE
-            </span>
-            </Link>
-            
-          </div>
+        {/* Main text */}
+        <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+          Let's build something amazing
+        </span>
+
+        {/* Available badge */}
+        <span className="inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-[9px] font-bold tracking-wider text-black transition-all duration-300 group-hover:bg-white sm:px-3 sm:text-[10px]">
+          AVAILABLE
+        </span>
+      </Link>
           
 
         </div>
