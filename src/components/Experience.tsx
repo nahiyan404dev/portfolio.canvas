@@ -3,7 +3,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight,} from "lucide-react";
+import logo from '@/assets/bazar-dor.png'
+import logo_img from '@/assets/fit-log.png'
 
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,25 +13,27 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { FaGithub } from "react-icons/fa6";
 
 const projects = [
   {
     title: "Bazar Dor",
     description:
       "A modern market price tracking application that helps users explore daily product prices.",
-    image: "/projects/bazar-dor.png",
+
+    image:'/assets/bazar-dor.png',
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/",
-    demo: "https://example.com",
+    github: "https://github.com/nahiyan404dev/b14_A7_Bazar-dor",
+    demo: "https://b14-a7-bazar-dor-kohl.vercel.app",
   },
   {
     title: "FitLog",
     description:
       "A fitness library application for exploring workouts, exercises, and training information.",
-    image: "/projects/fitlog.png",
+    image:'/assets/fit-log.png',
     tech: ["React", "TypeScript", "API"],
-    github: "https://github.com/",
-    demo: "https://example.com",
+    github: "https://github.com/nahiyan404dev/b14-A6-Fit_Log",
+    demo: "https://b14-a6-fit-log-pmfg.vercel.app",
   },
   {
     title: "Personal Portfolio",
@@ -49,7 +52,7 @@ export default function Projects() {
       <div className="container mx-auto max-w-7xl">
 
         <p className="mb-3 text-sm uppercase tracking-widest text-muted-foreground">
-          My Portfolio
+           Projects
         </p>
 
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
@@ -62,12 +65,7 @@ export default function Projects() {
             </p>
           </div>
 
-          <Button variant="outline">
-            <Link href="https://github.com/" target="_blank">
-              View GitHub
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          
         </div>
 
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
@@ -104,19 +102,21 @@ export default function Projects() {
               </CardContent>
 
               <CardFooter className="gap-3 px-5 pb-5">
-                <Button size="sm" variant="outline">
-                  {/* <Link href={project.github} target="_blank">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub
-                  </Link> */}
+                 <Button variant="outline">
+                  <Link href="" target="_blank">
+                    
+                   <FaGithub size={10}/> GitHub
+                    
+                    
+                  </Link>
                 </Button>
 
-                <Button size="sm">
+                {/* <Button size="sm">
                   <Link href={project.demo} target="_blank">
                     Live Demo
                     <ArrowUpRight className="ml-2 h-4 w-4" />
                   </Link>
-                </Button>
+                </Button> */}
               </CardFooter>
             </Card>
           ))}

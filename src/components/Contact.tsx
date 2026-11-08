@@ -1,13 +1,15 @@
 
 "use client";
  
-import { Mail, Send } from "lucide-react";
+import { Download, Mail, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "./ui/card";
+import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Contact() {
   return (
@@ -42,15 +44,26 @@ export default function Contact() {
 
             <div className="flex gap-2 space-y-6">
                <div className="flex flex-wrap gap-3">
-                <Button variant="outline">
-                   GitHub ↗
+                 <Link href='https://github.com/nahiyan404dev'>
+                    <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+                      <FaGithub size={20}/>
+                      GitHub
+                    </Button>
+                </Link>
+                <Link href='https://www.linkedin.com/in/gopal-das-38676b391'>
+                  <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+                    <FaLinkedin size={20}/>
+                    Linkedin
+                  </Button>
+                </Link>
+                 <Link href='/gopal_das.pdf'
+                  download='gopal_das.pdf'
+                  >
+                <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+                <Download size={16} />
+                    Résumé
                 </Button>
-                <Button variant="outline" >
-                   LinkedIn ↗
-                </Button>
-                <Button variant="outline">
-                  Résumé ↓      
-                </Button>
+              </Link>
              </div>
             </div>
           </div>

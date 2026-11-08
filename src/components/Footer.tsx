@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
-
+ 
 const links = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
@@ -15,10 +15,6 @@ export default function Footer() {
   return (
     <footer className="px-6 py-8">
       <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
-
-        <Link href="#home" className="text-xl font-bold">
-          Stark<span className="text-primary">.</span>
-        </Link>
 
         <div className="flex flex-wrap justify-center gap-6">
           {links.map((link) => (
@@ -33,12 +29,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4">
-          {/* <Link href="https://github.com/" target="_blank">
-            <Github size={19} />
-          </Link>
-          <Link href="https://linkedin.com/" target="_blank">
-            <Linkedin size={19} />
-          </Link> */}
+           
 
           <Link
             href="#home"
@@ -50,7 +41,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto mt-8 max-w-7xl border-t pt-6 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Stark. All rights reserved.
+        © {new Date().getFullYear()} Niloy. All rights reserved.
       </div>
     </footer>
   );

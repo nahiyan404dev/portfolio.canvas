@@ -1,71 +1,67 @@
 
-"use client";
-
 import Link from "next/link";
-import {ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import AnimatedButton from "./AnimationButton";
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <section
-      id="home"
-      className="relative flex min-h-[85vh] items-center border-b px-6 py-24"
-    >
-      <div className="container mx-auto max-w-7xl">
-        <div className="max-w-3xl space-y-7">
+    <section className="relative min-h-screen justify-center-saf overflow-hidden px-5 py-20 text-black sm:px-10 lg:px-16">
 
-          <Badge variant="outline" className="rounded-full px-4 py-2">
-            <span className="mr-2 h-2 w-2 rounded-full bg-green-500" />
-            Available for opportunities
-          </Badge>
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex min-h-[75vh] max-w-7xl flex-col justify-center-safe">
 
-          <div className="space-y-4">
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-muted-foreground">
-                Dhaka,Bangladesh________________________
-                
-            </p>
+         {/* Location */}
+        <p className="mb-12 text-xs font-semibold uppercase tracking-[0.25em] text-gray-600 dark:text-gray-400">
+          Dhaka, Bangladesh
+        </p>
+
+        {/* Name */}
+        <h1 className="mb-4 text-[clamp(3rem,14vw,11rem)] font-black uppercase leading-[0.78] tracking-[-0.075em] text-black dark:text-white">
+          Gopal
+          <br />
+          Das.
+        </h1>
+
+        {/* Description */}
+        <p className="max-w-6xl text-3xl font-normal leading-tight tracking-tight text-black dark:text-white sm:text-3xl md:text-4xl lg:text-5xl">
+          Full-stack engineer building{" "}
+          <span className="font-semibold">
+            AI
+            <br />
+            retrieval and agent systems
+          </span>
+          <br />
+          that hold up in production.
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-12 flex flex-wrap items-center gap-4">
+
+          {/* Primary Button */}
             
 
-            <h1 className="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-              Full-Stack Engineer building AI retrieval and agent systems that hold up in production.
-              <br />
-              Experiences with
-              <span className="text-primary"> Code.</span>
-            </h1>
+            <AnimatedButton/>
 
-            <p className="max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
-              I am a passionate Web Developer focused on creating
-              modern, responsive, and user-friendly digital
-              experiences using React, Next.js, and Node.js.
-            </p>
-          </div>
+          {/* Secondary Badge */}
+          <div className="flex flex-wrap items-center gap-3 rounded-full border-2 border-dashed border-gray-400 px-5 py-3 text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-white hover-">
+            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
+            <Link href='#contact'>
+              <span>
+              Let's build something amazing
+            </span>
 
-          <div className="flex flex-wrap gap-3">
-            <Button size="lg" >
-              <Link href="#projects">
-                Explore My Work
-                <ArrowUpRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-
-            <Button size="lg" variant="outline">
-              <Link href="#contact">
-                Lets Talk
-              </Link>
-            </Button>
-          </div>
-
-          {/* <div className="flex items-center gap-5 pt-3">
-            <Link href="https://github.com/" target="_blank">
-              <Github className="h-5 w-5 text-muted-foreground hover:text-primary" />
+            <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-black">
+              AVAILABLE
+            </span>
             </Link>
-            <Link href="https://linkedin.com/" target="_blank">
-              <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </Link>
-          </div> */}
+            
+          </div>
+          
+
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
+ 

@@ -8,6 +8,7 @@ import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./theme-control";
 import logo from "@/assets/niloy.png";
+ 
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -28,8 +29,8 @@ export default function Navbar() {
         <Link href="#home" className="shrink-0">
           <Image
             src={logo}
-            height={40}
-            width={40}
+            height={50}
+            width={50}
             alt="Portfolio logo"
             priority
             className="rounded-full object-cover"
@@ -37,12 +38,12 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="rounded-full border border-border px-4 py-2 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary"
             >
               {link.name}
             </Link>
@@ -56,10 +57,11 @@ export default function Navbar() {
           <Link href='/gopal_das.pdf'
           download='gopal_das.pdf'
           >
-          <Button variant="outline" className="hidden gap-2 sm:flex">
+          <Button variant="outline" className="rounded-full border border-border p-5 px-4 py-2 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary">
             <Download size={16} />
             Résumé
           </Button>
+               
           </Link>
           {/* Mobile Menu Button */}
           <Button
@@ -93,12 +95,18 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-
-            <Button variant="outline" className="mt-2 w-full sm:hidden">
-              <Download size={16} />
-              Résumé
-            </Button>
+            <Link href='/gopal_das.pdf'
+          download='gopal_das.pdf'
+          >
+          <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+            <Download size={16} />
+            Résumé
+          </Button>
+ 
+          </Link>
+             
           </div>
+          
         </div>
       )}
     </header>
