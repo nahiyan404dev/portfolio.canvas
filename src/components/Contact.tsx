@@ -45,13 +45,13 @@ export default function Contact() {
             <div className="flex gap-2 space-y-6">
                <div className="flex flex-wrap gap-3">
                  <Link href='https://github.com/nahiyan404dev'>
-                    <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+                    <Button variant="outline" className=" gap-2 sm:flex p-4">
                       <FaGithub size={20}/>
                       GitHub
                     </Button>
                 </Link>
                 <Link href='https://www.linkedin.com/in/gopal-das-38676b391'>
-                  <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+                  <Button variant="outline" className=" gap-2 sm:flex p-4">
                     <FaLinkedin size={20}/>
                     Linkedin
                   </Button>
@@ -59,7 +59,7 @@ export default function Contact() {
                  <Link href='/gopal_das.pdf'
                   download='gopal_das.pdf'
                   >
-                <Button variant="outline" className="hidden gap-2 sm:flex p-4">
+                <Button variant="outline" className="gap-2 sm:flex p-4">
                 <Download size={16} />
                     Résumé
                 </Button>
