@@ -3,8 +3,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logo from '@/assets/bazar-dor.png'
-import logo_img from '@/assets/fit-log.png'
+
 
 import { Badge } from "@/components/ui/badge";
 import {
@@ -21,8 +20,8 @@ const projects = [
     description:
       "A modern market price tracking application that helps users explore daily product prices.",
 
-    image:'/assets/bazar-dor.png',
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image:'/bazar-dor.png',
+    tech: ["Next.js", "TypeScript", "Tailwind CSS",'Better-Auth','Node.js','MongoDB'],
     github: "https://github.com/nahiyan404dev/b14_A7_Bazar-dor",
     demo: "https://b14-a7-bazar-dor-kohl.vercel.app",
   },
@@ -30,8 +29,8 @@ const projects = [
     title: "FitLog",
     description:
       "A fitness library application for exploring workouts, exercises, and training information.",
-    image:'/assets/fit-log.png',
-    tech: ["React", "TypeScript", "API"],
+    image:'/fit-log.png',
+    tech: ["Next.js", "TypeScript", "API"],
     github: "https://github.com/nahiyan404dev/b14-A6-Fit_Log",
     demo: "https://b14-a6-fit-log-pmfg.vercel.app",
   },
@@ -39,7 +38,7 @@ const projects = [
     title: "Personal Portfolio",
     description:
       "A responsive personal portfolio showcasing development skills and featured projects.",
-    image: "/projects/portfolio.png",
+    image: '/portfolio.png',
     tech: ["Next.js", "Shadcn UI", "Tailwind CSS"],
     github: "https://github.com/",
     demo: "https://example.com",
@@ -101,22 +100,23 @@ export default function Projects() {
                 </div>
               </CardContent>
 
-              <CardFooter className="gap-3 px-5 pb-5">
-                 <Button variant="outline">
-                  <Link href="" target="_blank">
-                    
-                   <FaGithub size={10}/> GitHub
-                    
-                    
-                  </Link>
-                </Button>
+              <CardFooter className="gap-5 px-5 pb-5">
+                  
+                   <Link href={project.github}>
+                    <Button variant="outline" className='rounded-full border border-border p-5 px-4 py-2 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary'>
+                      <FaGithub size={20}/>
+                      GitHub
+                    </Button>
+                    </Link>
 
-                {/* <Button size="sm">
-                  <Link href={project.demo} target="_blank">
-                    Live Demo
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                    <Link href={project.demo} target="_blank">
+                    <Button size="sm">
+                      Live Demo
+                    </Button>
+                    
                   </Link>
-                </Button> */}
+
+                
               </CardFooter>
             </Card>
           ))}

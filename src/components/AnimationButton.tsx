@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const AnimatedButton = () => {
   return (
     <Link
-      href="#work"
+      href="#projects"
       className="group relative inline-flex items-center gap-5
       overflow-hidden rounded-full border-2 border-black
       bg-white py-2 pl-5 pr-2
@@ -35,8 +35,7 @@ const AnimatedButton = () => {
         className="relative z-10 flex h-9 w-9 shrink-0
         items-center justify-center rounded-full
         bg-yellow-400 text-black
-        transition-transform duration-300
-         "
+        transition-transform duration-300"
       >
         <ArrowRight size={18} />
       </span>

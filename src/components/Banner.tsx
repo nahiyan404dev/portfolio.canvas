@@ -2,9 +2,11 @@
 import Link from "next/link";
 import AnimatedButton from "./AnimationButton";
 
-const Hero = () => {
+const Banner = () => {
   return (
-    <section className="relative min-h-screen justify-center-saf overflow-hidden px-5 py-20 text-black sm:px-10 lg:px-16">
+    <section 
+    id="home"
+    className="relative min-h-screen justify-center-saf overflow-hidden px-5 py-20 text-black sm:px-10 lg:px-16">
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-[75vh] max-w-7xl flex-col justify-center-safe">
@@ -35,10 +37,6 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="mt-12 flex flex-wrap items-center gap-4">
-
-          {/* Primary Button */}
-            
-
             <AnimatedButton/>
 
           {/* Secondary Badge */}
@@ -46,7 +44,7 @@ const Hero = () => {
             <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
             <Link href='#contact'>
               <span>
-              Let's build something amazing
+              Lets build something amazing
             </span>
 
             <span className="rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-black">
@@ -63,5 +61,5 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Banner;
  

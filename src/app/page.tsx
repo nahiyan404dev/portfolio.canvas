@@ -1,6 +1,9 @@
 
 import About from '@/components/About';
 import Banner from '@/components/Banner';
+
+
+
 import Contact from '@/components/Contact';
 import Experience from '@/components/Experience';
 import Footer from '@/components/Footer';
@@ -18,10 +21,10 @@ const HomePage = () => {
   return (
     <div>
       <Navbar/>
+      <Banner/>
       <ScrollAnimation>
-          <ScrollArea className="h-full w-full rounded-md border p-2">
-        
-        <Banner/>
+        <ScrollArea className="h-full w-full rounded-md border p-2">
+          
         <About/>
         <Skills/>
         <Experience/>
